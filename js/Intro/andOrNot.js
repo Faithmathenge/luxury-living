@@ -1,0 +1,34 @@
+// Comparison operators 
+//and wants everything to be true
+
+
+
+let val1=true
+let val2= false
+
+console.log(`val1=${val1} val2=${val2} val1&val2=${val1&&val2}`)
+
+
+let faith_age=26;
+let faith_balance=1000000;
+let result =val1 && val2
+
+///if faith age is greater than 18 and has more than 20k in her account
+
+let is_greater_than_18=faith_age>18
+console.log(`is faith age greater than 18 ${is_greater_than_18}`)
+
+let has_more_than_20k=faith_balance>20000
+console.log(`faith has more than 20k ${has_more_than_20k}`)
+
+console.log(
+  `faith is greater than 18 and has more than 20k in her account
+  ${is_greater_than_18&&has_more_than_20k}
+  `)
+
+
+  //simplified version
+  let simplified=faith_age>18&&faith_balance>20000
+  console.log(`simplified ${simplified}`)
+  console.log(`further simplication is ${faith_age>18&&faith_balance>20000}`)
+  
