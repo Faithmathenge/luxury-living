@@ -32,3 +32,30 @@ console.log(
   console.log(`simplified ${simplified}`)
   console.log(`further simplication is ${faith_age>18&&faith_balance>20000}`)
   
+
+  //Truthy or Falsey
+//if something is not falsey then it is truthy
+//FALSEY
+//false
+//0
+//null
+//undefined
+//"" empty string
+//Nan
+
+
+  
+console.log(`
+Faith is age is greater than 18
+or she has more than 20k in her account
+${is_greater_than_18 || has_more_than_20k}
+`);
+
+ let userName1="Mark chege"
+ let userName2="0"
+
+ let activeUserName=userName2 || userName1
+ console.log(activeUserName)
+
+ let bothUserNameOk=userName1&&userName2
+ console.log(bothUserNameOk)
