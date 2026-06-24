@@ -59,3 +59,9 @@ ${is_greater_than_18 || has_more_than_20k}
 
  let bothUserNameOk=userName1&&userName2
  console.log(bothUserNameOk)
+
+ //
+//|| returns the first truthy value
+//&& returns the last value when everything is truthy
+//&& returns the first falsy value or the last value if everything is truthy
+//
