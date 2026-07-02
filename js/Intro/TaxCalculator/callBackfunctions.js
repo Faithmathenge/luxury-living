@@ -42,3 +42,10 @@ let intervalId = setInterval(() => {
 }, 3000);
 
 clearInterval(intervalId); // Stop the interval after 10 seconds
+
+
+
+//test the shape function with different shapes and parameters
+shape(calculateCircleArea, "circle", 5);
+shape(calculateRectangleArea, "rectangle", 4, 6);
+shape(calculateTriangleArea, "triangle", 3, 8);
