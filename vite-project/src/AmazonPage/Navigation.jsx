@@ -1,11 +1,12 @@
-import logo from "./Assets/amazonlogo.png";
+import logo from "./Assets/logo.png";
 
 function Navigate() {
-  return(
-    <div>
-      <h2>Navigation section</h2>
+  return (
+    <div className="nav">
+      <img src={logo} width="60px" />
+      <input placeholder="Search" />
     </div>
-  )
+  );
 }
 
 export default Navigate;
