@@ -1,22 +1,36 @@
-import FilterList from "./FilterList.jsx";
+import FilterList from "./FilterList";
 
 function SideBar() {
   return (
     <div
       style={{
         display: "flex",
-        width: "400px",
+        width: "300px",
         flexDirection: "column",
       }}
     >
-      <FilterList />
-      <FilterList />
-      <FilterList />
-      <FilterList />
-      <FilterList />
-      <FilterList />
-      <FilterList />
-      <FilterList />
+      <FilterList title="Condition" options={["New", "Used", "Renewed"]} />
+
+      <FilterList
+        title="Material"
+        options={["Plastic", "Rubber", "PVC", "Allot Stel", "Aluminium"]}
+      />
+
+      <FilterList
+        title="Uses"
+        options={[
+          "Exercise",
+          "Speed And Endurance",
+          "Boxing",
+          "Body Building",
+          "Marital Arts",
+        ]}
+      />
+
+      <FilterList
+        title="Brand"
+        options={["Cross Rope", "Venum", "Sport Bit", "Canon Sport", "Adidas"]}
+      />
     </div>
   );
 }
