@@ -8,20 +8,21 @@ function Form() {
     password: "",
   });
 
-  const handleChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
+  const nameOnChange = (e) => {
+    const inputClone = { ...input };
+    inputClone.name = e.target.value;
+    setInput(inputClone);
   };
 
   const onSubmit = () => {
     console.log("Submit button clicked");
-    console.log("Name:", input.name);
-    console.log("Email:", input.email);
-    console.log("Phone:", input.phone);
-    console.log("Password:", input.password);
+    console.log("name is", input.name);
+    console.log("email is", input.email);
+    console.log("phone is", input.phone);
+    console.log("password is", input.password);
   };
+
+  console.log(input);
 
   return (
     <div>
@@ -29,8 +30,9 @@ function Form() {
         <div>
           <label>Name</label>
         </div>
+
         <div>
-          <input name="name" value={input.name} onChange={handleChange} />
+          <input value={input.name} onChange={nameOnChange} />
         </div>
       </main>
 
@@ -38,8 +40,16 @@ function Form() {
         <div>
           <label>Email</label>
         </div>
+
         <div>
-          <input name="email" value={input.email} onChange={handleChange} />
+          <input
+            value={input.email}
+            onChange={(e) => {
+              const inputClone = { ...input };
+              inputClone.email = e.target.value;
+              setInput(inputClone);
+            }}
+          />
         </div>
       </main>
 
@@ -47,8 +57,16 @@ function Form() {
         <div>
           <label>Phone</label>
         </div>
+
         <div>
-          <input name="phone" value={input.phone} onChange={handleChange} />
+          <input
+            value={input.phone}
+            onChange={(e) => {
+              const inputClone = { ...input };
+              inputClone.phone = e.target.value;
+              setInput(inputClone);
+            }}
+          />
         </div>
       </main>
 
@@ -56,12 +74,16 @@ function Form() {
         <div>
           <label>Password</label>
         </div>
+
         <div>
           <input
             type="password"
-            name="password"
             value={input.password}
-            onChange={handleChange}
+            onChange={(e) => {
+              const inputClone = { ...input };
+              inputClone.password = e.target.value;
+              setInput(inputClone);
+            }}
           />
         </div>
       </main>
@@ -70,12 +92,12 @@ function Form() {
         <button onClick={onSubmit}>Submit</button>
       </main>
 
-      <hr />
-
-      <h2>Name: {input.name}</h2>
-      <h2>Email: {input.email}</h2>
-      <h2>Phone: {input.phone}</h2>
-      <h2>Password: {input.password}</h2>
+      <ul>
+        <li>Name: {input.name}</li>
+        <li>Email: {input.email}</li>
+        <li>Phone: {input.phone}</li>
+        <li>Password: {input.password}</li>
+      </ul>
     </div>
   );
 }
