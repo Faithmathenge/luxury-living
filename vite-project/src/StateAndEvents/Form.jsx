@@ -1,22 +1,26 @@
+import { useState } from "react";
+
 function Form() {
-  // Event when name changes
-  const nameOnChange = (e) => {
-    console.log("NAME IS", e.target.value);
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // Event when email changes
-  const emailOnChange = (e) => {
-    console.log("EMAIL IS", e.target.value);
-  };
-
-  // Event when password changes
-  const passwordOnChange = (e) => {
-    console.log("PASSWORD IS", e.target.value);
-  };
-
-  // Submit button event
   const onSubmit = () => {
     console.log("Submit button clicked");
+    console.log("Name:", input.name);
+    console.log("Email:", input.email);
+    console.log("Phone:", input.phone);
+    console.log("Password:", input.password);
   };
 
   return (
@@ -25,9 +29,8 @@ function Form() {
         <div>
           <label>Name</label>
         </div>
-
         <div>
-          <input onChange={nameOnChange} />
+          <input name="name" value={input.name} onChange={handleChange} />
         </div>
       </main>
 
@@ -35,9 +38,17 @@ function Form() {
         <div>
           <label>Email</label>
         </div>
-
         <div>
-          <input onChange={emailOnChange} />
+          <input name="email" value={input.email} onChange={handleChange} />
+        </div>
+      </main>
+
+      <main>
+        <div>
+          <label>Phone</label>
+        </div>
+        <div>
+          <input name="phone" value={input.phone} onChange={handleChange} />
         </div>
       </main>
 
@@ -45,15 +56,26 @@ function Form() {
         <div>
           <label>Password</label>
         </div>
-
         <div>
-          <input type="password" onChange={passwordOnChange} />
+          <input
+            type="password"
+            name="password"
+            value={input.password}
+            onChange={handleChange}
+          />
         </div>
       </main>
 
       <main>
         <button onClick={onSubmit}>Submit</button>
       </main>
+
+      <hr />
+
+      <h2>Name: {input.name}</h2>
+      <h2>Email: {input.email}</h2>
+      <h2>Phone: {input.phone}</h2>
+      <h2>Password: {input.password}</h2>
     </div>
   );
 }
