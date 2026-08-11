@@ -1,10 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import Form from "./StateAndEvents/Form.jsx";
+import Routing from "./Routing";
+import GithubProject from "./GithubProject";
+
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Form />
+    <GithubProject />
+    <Routing />
   </StrictMode>,
 );
+
