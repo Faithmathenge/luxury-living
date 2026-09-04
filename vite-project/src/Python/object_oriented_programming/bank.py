@@ -8,14 +8,14 @@ Abstraction
 """
 
 class BankAccount:
-    clients=0
-    bank_name="KCB"
+    clients=0 #static p
+    bank_name="KCB"  #static property
 
     def __init__(self, name, balance, account_no):
         self.name = name
         self._balance = balance
         self._account_no = account_no
-
+        BankAccount.add_client() #class method
     
     @property
     def balance(self):
@@ -47,9 +47,32 @@ class BankAccount:
         print(f"Balance {self.balance}")
         print(f"Account no {self._account_no}")
 
+        # Static Method. <class methods> @staticmethod ->
+#
+    @staticmethod
+    def calculate_interest(amount, year):
+         rate = 10
+         interest_per_year = amount * (rate / 100)
+         interest_total = interest_per_year * year
+         total = amount + interest_total
+         print(f"If you take a loan. of ${amount}, interest rate per year {interest_per_year}")
+         print(f"Total interest {interest_total}, total to pay {total} after {year}")
 
-john = BankAccount(name="John Mwangi", balance=0, account_no="223344556")
+#
+#Class Method. <>
+#class itself.
+#
+    @classmethod
+    def add_client(cls):
+        cls.clients = cls.clients + 1
 
-print("Bank Name",BankAccount.bank_name)
-print(john._account_no)
-print("Clients",BankAccount.clients)  #Class property
+
+john = BankAccount(name="John Mwangi", balance=0, account_no="223344223")
+print("Total clients", BankAccount.clients)
+
+samel = BankAccount(name="Samuel", balance=0, account_no="223344223")
+print("Total clients", BankAccount.clients)
+
+BankAccount.calculate_interest(5000, 3)
+
+
