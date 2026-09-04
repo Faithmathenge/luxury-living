@@ -10,6 +10,7 @@ work easy. by using principles.
    while restricting direct access to internal data.
 2.Abstraction
    -Hiding uncessary complexity or implrtation of details.
+   getters and setters. class methods
 3.Inheritance
     -one class to reuse or extend propertie
      and methods of another class
